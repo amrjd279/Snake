@@ -4,7 +4,7 @@ import random
 WIDTH, HEIGHT = 600, 600
 BLOCK_SIZE = 20
 
-pygame.pygame.display.get_caption("Snake Game")
+pygame.display.set_caption("Snake Game")
 pygame.font.init()
 score_font = pygame.font.SysFont("Consolas", 20)
 score = 0
