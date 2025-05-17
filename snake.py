@@ -84,4 +84,16 @@ def game_over_screen():
     win.blit(game_over_text, (WIDTH // 2 - game_over_text.get_width() // 2, HEIGHT // 2 - game_over_text.get_height() // 2))
     pygame.display.update()
 
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                return
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_r:
+                    run() # Redémarre le jeu
+                    return
+            elif event.type == pygame.K_q:
+                pygame.quit() # Quitte le jeu
+                return
 
