@@ -96,4 +96,16 @@ def game_over_screen():
             elif event.type == pygame.K_q:
                 pygame.quit() # Quitte le jeu
                 return
-
+            
+def run()
+    global snake_speed, snake_pos, food_pos, score
+    snake_pos = [[WIDTH // 2, HEIGHT // 2]]
+    snake_speed = [0, BLOCK_SIZE]
+    food_pos : generate_food()
+    score = 0
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            keys = pygame.key.get_pressed()
