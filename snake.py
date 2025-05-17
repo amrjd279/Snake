@@ -76,13 +76,12 @@ def game_over():
             snake_pos[0][1] > HEIGHT - BLOCK_SIZE or \
             snake_pos[0][1] < 0
    
-def game_over():
-   # jeu terminé lorsque le serpent touche les limites ou se heurte à lui-même
-    if teleport_walls:
-        return snake_pos[0] in snake_pos[1:]
-    else:
-        return snake_pos[0] in snake_pos[1:] or \
-            snake_pos[0][0] > WIDTH - BLOCK_SIZE or \
-            snake_pos[0][0] < 0 or \
-            snake_pos[0][1] > HEIGHT - BLOCK_SIZE or \
-            snake_pos[0][1] < 0
+def game_over_screen():
+    global score
+    win.fill((0, 0, 0))
+    game_over_font = pygame.font.SysFont("consolas", 50)
+    game_over_text = game_over_font.render(f"Game Over ! Score : {score}", True, WHITE)
+    win.blit(game_over_text, (WIDTH // 2 - game_over_text.get_width() // 2, HEIGHT // 2 - game_over_text.get_height() // 2))
+    pygame.display.update()
+
+
