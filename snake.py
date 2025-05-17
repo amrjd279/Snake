@@ -57,3 +57,11 @@ def update_snake():
             new_head[1] = 0
         elif new_head[1] < 0:
             new_head[1] = HEIGHT - BLOCK_SIZE
+        if new_head == food_pos:
+            food = generate_food() # Nouvelle nourriture
+            score += 1 # Incrémenter le score lorsque la nourriture est mangée
+        else:
+            snake_pos.pop() # Enlève la dernière partie du serpent
+        
+        snake_pos.insert(0, new_head) # Ajoute la nouvelle tête à la position du serpent
+        
