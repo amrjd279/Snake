@@ -25,3 +25,11 @@ snake_pos = [[WIDTH // 2, HEIGHT // 2]]
 snake_speed = [0, BLOCK_SIZE]
 
 teleport_walls = True
+
+def generate_food():
+    x = random.randint(0, (WIDTH - BLOCK_SIZE) // BLOCK_SIZE) * BLOCK_SIZE
+    y = random.randint(0, (HEIGHT - BLOCK_SIZE) // BLOCK_SIZE) * BLOCK_SIZE
+    food_pos = [x, y]
+    if food_pos not in snake_pos:
+        return food_pos
+    food_pos = generate_food()
