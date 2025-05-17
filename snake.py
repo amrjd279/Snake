@@ -76,4 +76,13 @@ def game_over():
             snake_pos[0][1] > HEIGHT - BLOCK_SIZE or \
             snake_pos[0][1] < 0
    
-        
+def game_over():
+   # jeu terminé lorsque le serpent touche les limites ou se heurte à lui-même
+    if teleport_walls:
+        return snake_pos[0] in snake_pos[1:]
+    else:
+        return snake_pos[0] in snake_pos[1:] or \
+            snake_pos[0][0] > WIDTH - BLOCK_SIZE or \
+            snake_pos[0][0] < 0 or \
+            snake_pos[0][1] > HEIGHT - BLOCK_SIZE or \
+            snake_pos[0][1] < 0
