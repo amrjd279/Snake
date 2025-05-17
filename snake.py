@@ -4,6 +4,7 @@ import random
 WIDTH, HEIGHT = 600, 600
 BLOCK_SIZE = 20
 
+pygame.pygame.display.get_caption("Snake Game")
 pygame.font.init()
 score_font = pygame.font.SysFont("Consolas", 20)
 score = 0
@@ -81,7 +82,7 @@ def game_over_screen():
     global score
     win.fill((0, 0, 0))
     game_over_font = pygame.font.SysFont("consolas", 50)
-    game_over_text = game_over_font.render(f"Game Over ! Score : {score}", True, WHITE)
+    game_over_text = game_over_font.render(f"Snake - Game Over ! Score : {score}", True, WHITE)
     win.blit(game_over_text, (WIDTH // 2 - game_over_text.get_width() // 2, HEIGHT // 2 - game_over_text.get_height() // 2))
     pygame.display.update()
 
