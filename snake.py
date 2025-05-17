@@ -109,3 +109,24 @@ def run()
             if event.type == pygame.QUIT:
                 running = False
             keys = pygame.key.get_pressed()
+            for key in keys:
+                    if keys[pygame.K_UP]:
+                        # lorsque HAUT est pressé mais que le serpent va vers le bas, ignorer l'entrée
+                        if snake_speed[1] == BLOCK_SIZE:
+                            continue
+                        snake_speed = [0, -BLOCK_SIZE]
+                    if keys[pygame.K_DOWN]:
+                        # lorsque BAS est pressé mais que le serpent va vers le haut, ignorer l'entrée
+                        if snake_speed[1] == -BLOCK_SIZE:
+                            continue
+                        snake_speed = [0, BLOCK_SIZE]
+                    if keys[pygame.K_LEFT]:
+                        # lorsque GAUCHE est pressé mais que le serpent va vers la droite, ignorer l'entrée
+                        if snake_speed[0] == BLOCK_SIZE:
+                            continue
+                        snake_speed = [-BLOCK_SIZE, 0]
+                    if keys[pygame.K_RIGHT]:
+                        # lorsque DROITE est pressé mais que le serpent va vers la gauche, ignorer l'entrée
+                        if snake_speed[0] == -BLOCK_SIZE:
+                            continue
+                        snake_speed = [BLOCK_SIZE, 0]
