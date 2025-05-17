@@ -64,4 +64,16 @@ def update_snake():
             snake_pos.pop() # Enlève la dernière partie du serpent
         
         snake_pos.insert(0, new_head) # Ajoute la nouvelle tête à la position du serpent
+
+def game_over():
+   # fin de partie lorsque le serpent heurte les limites ou se heurte lui-même
+   if teleport_walls:
+       return snake_pos[0] in snake_pos[1:]
+   else:
+       return snake_pos[0] in snake_pos[1:] or \
+            snake_pos[0][0] > WIDTH - BLOCK_SIZE or \
+            snake_pos[0][0] < 0 or \
+            snake_pos[0][1] > HEIGHT - BLOCK_SIZE or \
+            snake_pos[0][1] < 0
+   
         
