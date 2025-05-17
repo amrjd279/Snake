@@ -130,3 +130,10 @@ def run()
                         if snake_speed[0] == -BLOCK_SIZE:
                             continue
                         snake_speed = [BLOCK_SIZE, 0]
+        if game_over():
+            game_over_screen()
+            return
+        update_snake()
+        draw_objects()
+        pygame.display.update()
+        clock.tick(15) # Limite la vitesse du serpent à 15 FPS
