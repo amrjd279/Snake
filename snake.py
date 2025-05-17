@@ -40,5 +40,6 @@ def draw_objects():
         pygame.draw.rect(win, WHITE, pygame.Rect(pos[0], pos[1], BLOCK_SIZE, BLOCK_SIZE))
     pygame.draw.rect(win, RED, pygame.Rect(food_pos[0], food_pos[1], BLOCK_SIZE, BLOCK_SIZE))
     # Afficher le score
-    score_text = score_font_render(f"Score: {score}", True, WHITE)
+    score_text = score_font.render(f"Score: {score}", True, WHITE)
     win.blit(score_text, (10, 10)) # dessine le score dans le coin supérieur gauche
+
