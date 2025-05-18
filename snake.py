@@ -9,7 +9,8 @@ pygame.font.init()
 score_font = pygame.font.SysFont("Consolas", 20)
 score = 0
 
-WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+WHITE = (255,255,255)
 RED = (255, 0, 0)
 
 # Initialiser pygame
@@ -38,7 +39,7 @@ def generate_food():
 def draw_objects():
     win.fill((0, 0, 0))
     for pos in snake_pos:
-        pygame.draw.rect(win, WHITE, pygame.Rect(pos[0], pos[1], BLOCK_SIZE, BLOCK_SIZE))
+        pygame.draw.rect(win, GREEN, pygame.Rect(pos[0], pos[1], BLOCK_SIZE, BLOCK_SIZE))
     pygame.draw.rect(win, RED, pygame.Rect(food_pos[0], food_pos[1], BLOCK_SIZE, BLOCK_SIZE))
     # Afficher le score
     score_text = score_font.render(f"Score: {score}", True, WHITE)
@@ -131,8 +132,9 @@ def run():
 
         if game_over():
             game_over_screen()
+            print("perdu")
             return
-        
+
         update_snake()
         draw_objects()
         pygame.display.update()
