@@ -138,5 +138,8 @@ def run():
         pygame.display.update()
         clock.tick(15) # Limite la vitesse du serpent à 15 FPS
 
+
+print("Ohé du bateau")
+
 if __name__ == "__main__":
     run()
