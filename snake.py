@@ -133,7 +133,6 @@ def run():
 
         if game_over():
             game_over_screen()
-            print("perdu")
             return
 
         update_snake()
@@ -142,7 +141,6 @@ def run():
         clock.tick(15) # Limite la vitesse du serpent à 15 FPS
 
 
-print("Ohé du bateau")
 
 if __name__ == "__main__":
     run()
